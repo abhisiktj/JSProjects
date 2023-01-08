@@ -1,0 +1,36 @@
+html,body{
+    margin:0;
+    padding: 0;
+    font-family: monospace;
+}
+body{
+    /* background-image: url("cool-background.png"); */
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+    color:rgb(46, 74, 74);
+}
+.drum{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+.key{
+    height: 100px;
+    width:100px;
+    background-color: aqua;
+    margin: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border-radius: 50%;
+    transition: all 0.07s;
+}
+.playing{
+   transform: scale(1.1);
+   border: 5px solid yellow;
+   box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+}

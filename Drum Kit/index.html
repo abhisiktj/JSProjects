@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Drum Kit</h1>
+    <div class="drum">
+     <div data-key="65" class="key">A</div>
+     <div data-key="83" class="key">S</div>
+     <div data-key="68" class="key">D</div>
+     <div data-key="70" class="key">F</div>
+     <div data-key="71" class="key">G</div>
+     <div data-key="72" class="key">H</div>
+     <div data-key="74" class="key">I</div>
+    
+    </div>
+
+  <audio data-key="65" src="audio/sounds_sound-1.mp3"></audio>
+  <audio data-key="83" src="audio/sounds_sound-2.mp3"></audio>
+  <audio data-key="68" src="audio/sounds_sound-3.mp3"></audio>
+  <audio data-key="70" src="audio/sounds_sound-4.mp3"></audio>
+  <audio data-key="71" src="audio/sounds_sound-5.mp3"></audio>
+  <audio data-key="72" src="audio/sounds_sound-6.mp3"></audio>
+  <audio data-key="74" src="audio/sounds_sound-7.mp3"></audio>
+</body>
+
+<script>
+    function fun(e){
+       let audio=document.querySelector(`audio[data-key="${e.keyCode}"`);
+       let key=document.querySelector(`div[data-key="${e.keyCode}"`);
+       if(!audio)
+         return;
+        audio.currentTime=0;
+       audio.play();
+      key.classList.add("playing");
+    }
+    window.addEventListener('keydown',fun);
+
+    let keys=document.getElementsByClassName("key");
+    for(key of keys){
+        key.addEventListener("transitionend",removeTransition)
+    }
+    function removeTransition(e){
+        this.classList.remove("playing");
+
+    }
+</script>
+</html>
