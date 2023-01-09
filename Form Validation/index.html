@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+</head>
+<style>
+    *, *:before, *:after {
+    box-sizing: border-box;
+  }
+    body{
+        font-family: monospace;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+ 
+        background: rgb(41,35,134);
+background: linear-gradient(90deg, rgba(41,35,134,1) 3%, rgba(43,221,123,1) 100%, rgba(0,212,255,1) 100%); 
+}
+
+    #header{
+        text-align: center;
+        font-size: 50px;
+        color: rgba(240, 248, 255, 0.989);
+        margin: 20px;
+    }
+    .inform{
+       display: flex;
+       height: 70vh;
+       justify-content: center;
+       align-items: center;
+       
+    }
+    .inform form{
+       background-color: white;
+       height: 70%;
+       width: 30%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       flex-direction: column;
+     border-radius: 10px;
+       border: 2px solid rgb(20, 20, 65);
+       
+    }
+    input{
+        text-align: center;
+        display: block;
+        width: 80%;
+        border-radius: 5px;
+        height: 15%;
+        border: 1px solid black;
+    }
+    #submit{
+        height: 10%;
+        width: 50%;
+        background-color: lightblue;
+    }
+    #submit:hover{
+        cursor: pointer;
+        background-color: rgb(114, 197, 114);
+    }
+    p{
+       
+        color: red;
+        margin-top: 0;
+        margin-left: 33px;
+        align-self: flex-start;
+    }
+   
+</style>
+<body>
+    <p id="header">Login page</p>
+    <div class="inform">
+    <form action="" onsubmit="return validate()">
+        <input type="text" placeholder="Username" id="username"><br>
+        <p class="error" id="usernameError"></p>
+        <input type="text" placeholder="Password" id="password"><br>
+        <p class="error" id="passwordError"></p>
+        <input type="submit"id="submit">
+    </form>
+    </div>
+    <script>
+        let username=document.getElementById("username");
+        let password=document.getElementById("password");
+
+        function validate(){
+            let user=username.value;
+            let pass=password.value;
+            let flag=1;
+            if(user==""){
+              document.getElementById("usernameError").innerHTML="Username is empty";
+              flag=0;
+            }
+
+            else if(user.length<3){
+                document.getElementById("usernameError").innerHTML="Username requires minimun 3 character";
+               flag=0;
+            }
+            else{
+                document.getElementById("usernameError").innerHTML="";
+                flag=1;
+            }
+
+            if(pass==""){
+              document.getElementById("passwordError").innerHTML="password is empty";
+              flag=0;
+              
+            }
+
+            else if(pass.length<3){
+                document.getElementById("passwordError").innerHTML="Password requires minimun 3 character";
+                flag=0;
+            }
+            else{
+                document.getElementById("passwordError").innerHTML="";
+                flag=1;
+            }
+            if(flag)
+              return true;
+            else
+             return false;
+        }
+    </script>
+</body>
+</html>

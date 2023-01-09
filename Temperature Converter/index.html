@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+
+    <style>
+      h1{
+        text-align: center;
+      }
+      #container{
+           height: 175px;
+           margin: 100px;
+           padding:50px;
+           background-color: aqua;
+           text-align: center;
+           
+      }
+      .innerContainer{
+        display: inline-block;
+        padding: 20px;
+        margin: 30px;
+        text-align: center;
+      }
+      #cel{
+        text-align: center;
+        font-size: large;
+        font-weight: bold;
+        height: 50px;
+      }
+      #fah{
+        text-align: center;
+         font-size: large;
+        font-weight: bold;
+          height: 50px;
+
+      }
+    </style>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <div id="container">
+        <div class="innerContainer" id="cel-div">
+             <label style="font-size: 22px; font-weight: bold;">Celcius</label><br><br>
+            <input type="number" value="0" id="cel">
+        </div>
+
+        <div class="innerContainer">
+            <label style="font-size: 22px;font-weight: bold;">Fahrenheit</label><br><br>
+            <input type="number" value="32" id="fah">
+        </div>
+    </div>
+
+    <script>
+        let cel=document.getElementById("cel");
+         let fah=document.getElementById("fah");
+         
+         cel.addEventListener("input",function(){    
+            fah.value=(this.value* 9/5) + 32;
+         });
+
+          fah.addEventListener("input",function(){    
+            cel.value= 5/9*(this.value -32);
+         });
+    </script>
+</body>
+
+</html>

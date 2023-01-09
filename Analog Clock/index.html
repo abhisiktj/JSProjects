@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Analog Clock</h1>
+    <div class="container">
+    <div class="clock">
+    <div class="pivot"></div>
+    <div class="hand" id="hour-hand"></div>
+    <div class="hand" id="minute-hand"></div>
+    <div class="hand" id="second-hand"></div>
+    <div class="number" id="number1">1</div>
+    <div class="number" id="number2">2</div>
+    <div class="number" id="number3">3</div>
+    <div class="number" id="number4">4</div>
+    <div class="number" id="number5">5</div>
+    <div class="number" id="number6">6</div>
+    <div class="number" id="number7">7</div>
+    <div class="number" id="number8">8</div>
+    <div class="number" id="number9">9</div>
+    <div class="number" id="number10">10</div>
+    <div class="number" id="number11">11</div>
+    <div class="number" id="number12">12</div>
+</div>
+</div>
+<script>
+ setInterval(fun, 1000);
+let sdeg;
+let mdeg;
+let hdeg;
+ function fun(){
+
+    const date=new Date();
+    const seconds=date.getSeconds()/60;
+    const minutes=(seconds+date.getMinutes())/60;
+    const hours=(minutes+date.getHours())/12;
+    sdeg=seconds*360;
+    mdeg=minutes*360;
+    hdeg=hours*360;
+    let second=document.getElementById("second-hand");
+    let minute=document.getElementById("minute-hand");
+    let hour=document.getElementById("hour-hand");
+     console.log(seconds);
+    second.style.transform=`rotate(${sdeg}deg)`;
+    minute.style.transform=`rotate(${mdeg}deg)`;
+    hour.style.transform=`rotate(${hdeg}deg)`;
+
+ }
+ fun();
+
+</script>
+</body>
+</html>

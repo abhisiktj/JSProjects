@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word and Character Counter</title>
+    <style>
+        body{
+            padding: 10px;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+            background-color: rgb(196, 120, 120);
+            padding: 10px;
+          border-radius: 10px;
+        border:2px solid rgba(165, 49, 49, 0.5);
+        }
+        #text{
+            width: 100%;
+        border-radius: 10px;
+        border:2px solid rgba(165, 49, 49, 0.5);
+        width: 99.3%;
+        height: 300px;
+        font-size: 22px;
+        font-weight: bold;
+        }
+        p{
+        text-align: center;
+        font-size: 25px;
+    background-color: rgb(196, 120, 120);
+        padding: 10px;
+          border-radius: 10px;
+          border:2px solid rgba(165, 49, 49, 0.5);
+          width: 60%;
+          margin-left:auto;
+          margin-right: auto;
+          margin-top: 10px;
+          font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Word and Character Counter</h1>
+    <textarea  id="text" cols="30" rows="10"></textarea>
+    <p id="count"><span id="word">0</span> Words and <span id="char">0</span> Characters</p>
+
+    <script>
+        let text=document.getElementById("text");
+        text.addEventListener("input",function(){
+        let inp=this.value;
+        let char=inp.length;
+        document.getElementById("char").innerHTML=char;
+
+        inp=inp.trim();
+        let arr=inp.split(" ");
+        console.log(arr);
+        filteredArr=arr.filter(function(word){
+           return word!="";
+        });
+        document.getElementById("word").innerHTML=filteredArr.length;
+        });
+    </script>
+</body>
+</html>
