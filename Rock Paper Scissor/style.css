@@ -1,0 +1,75 @@
+body{
+padding: 0;
+margin: 0;
+}
+h1{
+    text-align: center;
+}
+.choice{
+    display: flex;
+    justify-content: center;
+}
+.score{
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 3%;
+}
+.moves{
+    height: 100px;
+    width: 100px;
+    border: 2px solid rebeccapurple;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin: 3%;
+    transition: all 0.1s;
+}
+.moves:hover{
+    transform: scale(1.1);
+}
+.moves:active{
+    background-color: aquamarine;
+}
+.finish{
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transform: scale(0);
+    transition: 0.3s ease-in-out;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 3rem;
+    width: 30%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    background-color: white;
+}
+.finish-active{
+  transform:translate(-50%,-50%) scale(1);
+}
+.overlay{
+    position: fixed;
+    opacity: 0;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: 300ms ease-in-out;
+    z-index: 3;
+}
+.overlay-active{
+   opacity: 1.0;
+
+}
+.game-over{
+    pointer-events: none;
+}
