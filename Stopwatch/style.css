@@ -1,0 +1,68 @@
+body{
+    padding: 0;
+    margin: 0;
+     height: 100vh;
+     background: rgb(101,136,200);
+     background: linear-gradient(90deg, rgb(26, 1, 44) 0%, rgb(110, 29, 135) 100%);
+     font-family: 'Montserrat', sans-serif;
+}
+.container{
+    text-align: center;
+    height:70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.number{
+    font-size: 6rem;
+    font-weight: bold;
+    color: white;
+}
+.txt{
+    font-size: 6rem;
+    font-weight: bold;
+    color: white;
+}
+.btn{
+    cursor: pointer;
+    font-size: large;
+    padding: 5px 25px 5px 25px;
+    margin-left: 15px;
+    margin-right: 10px;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.07s;
+    
+}
+.btn:focus{
+    transform: scale(1.2);
+}
+
+#start{
+    background-color: green;
+}
+#stop{
+    background-color: red;
+}
+#reset{
+    background-color: blue;
+}
+#lap{
+    background-color:  black;
+}
+
+.laps{
+    margin-left:auto ;
+    margin-right: auto;
+    width: 30%;
+    text-align: center;
+    font-size: 3rem;
+    padding: 3px 5px 0px 5px;
+    margin-bottom: 10px;
+  border: 2px solid rgb(118, 10, 145);
+  background-color: rgb(130, 99, 158);
+  border-radius: 5%;
+}
