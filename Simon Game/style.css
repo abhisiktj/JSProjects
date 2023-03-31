@@ -1,0 +1,40 @@
+body{
+    padding:0;
+    margin: 0;
+    background-color: #011F3F;
+
+}
+h1{
+   color: white;
+   text-align: center;
+}
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tile{
+    height: 200px;
+    width: 200px;
+    border-radius: 15%;
+    border: 10px solid black;
+    margin: 20px;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.blue{
+    margin-top: 10px;
+    background-color: blue;
+}
+.yellow{
+    
+    background-color: yellow;
+}
+.active{
+    background-color: white;
+}

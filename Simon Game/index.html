@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="heading">Press any key to start</h1>
+  <div class="wrapper">
+    <div class="tile green" onclick="tileClicked(event)"></div>
+    <div class="tile red" onclick="tileClicked(event)"></div>
+</div>
+    <div class="wrapper">
+        <div class="tile yellow" onclick="tileClicked(event)"></div>
+        <div class="tile blue" onclick="tileClicked(event)"></div>
+</div> 
+<audio id="blue-audio" src="sounds/blue.mp3"></audio>
+<audio id="green-audio" src="sounds/green.mp3"></audio>
+<audio id="red-audio" src="sounds/red.mp3"></audio>
+<audio id="yellow-audio" src="sounds/yellow.mp3"></audio>
+<audio id="wrong-audio" src="sounds/wrong.mp3"></audio>
+
+
+<script src="script.js"></script>
+</body>
+</html>
